@@ -1,7 +1,7 @@
 @import './global.css';
-/*
+
 *{
-    font-family: 'Inter', sans-serif;
+    /* font-family: 'Inter', sans-serif; */
 }
 
 body{
@@ -65,7 +65,7 @@ h1 {
 
 }
 
-#teclado{
+#keyboard{
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -73,18 +73,18 @@ h1 {
     max-width: 600px;
 }
 
-.teclado-letras{
+.keyboard-keys{
     display: flex;
     gap: 4px;
     justify-content: center;
 }
 
-.teclado-letras:nth-child(2) {
+.keyboard-keys:nth-child(2) {
     padding-left: 5%;
     padding-right: 5%;
 }
 
-.tecla{
+.key{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,4 +95,3 @@ h1 {
     background-color: darkgray;
     border-radius: 8px;
 }
-*/
