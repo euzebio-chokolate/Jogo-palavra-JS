@@ -27,6 +27,41 @@ header .header-icons:hover {
     opacity: 0.7;
 }
 
+#game-board {
+    display: grid;
+    /* grid-template-columns: repeat(5, 1fr);  O JS agora define isso dinamicamente */
+    gap: 5px; /* Espaço entre as células */
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: fit-content; /* Ajusta a largura ao conteúdo */
+}
+
+.board-row {
+    display: grid;
+    /* grid-template-columns: repeat(5, 1fr); O JS na verdade vai controlar isso via o .game-board */
+    gap: 5px;
+}
+
+.board-cell {
+    width: 60px; /* Largura da célula */
+    height: 60px; /* Altura da célula */
+    border: 2px solid #d3d6da; /* Borda padrão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em; /* Tamanho da letra */
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: #ffffff; /* Fundo padrão */
+    color: #1a1a1b; /* Cor do texto padrão */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer; /* Indica que é clicável */
+}
+
 /* .container{
     background-color: whitesmoke;
     padding: 32px;
