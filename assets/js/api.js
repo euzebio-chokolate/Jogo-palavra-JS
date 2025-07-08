@@ -1,4 +1,5 @@
 async function checkWordExists(word) {
+    word = word.toLowerCase();
     try {
         const response = await fetch(`https://api.dicionario-aberto.net/word/${word}`);
         if (!response.ok) {
