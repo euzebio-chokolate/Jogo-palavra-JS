@@ -83,3 +83,21 @@ document.addEventListener('DOMContentLoaded', () => {
         firstCell.focus();
     }
 });
+
+function simulateKeyPressVisual(key) {
+    let mappedKey = key.toLowerCase();
+
+    if (mappedKey === 'enter') mappedKey = 'enter';
+    else if (mappedKey === 'backspace') mappedKey = 'backspace';
+    else if (!mappedKey.match(/^[a-z]$/)) return;
+
+    const keyboard = document.getElementById('keyboard');
+    const keyElement = keyboard.querySelector(`.key[data-key="${mappedKey}"]`);
+    
+    if (keyElement) {
+        keyElement.classList.add('pressed');
+        setTimeout(() => {
+            keyElement.classList.remove('pressed');
+        }, 150);
+    }
+}

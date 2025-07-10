@@ -1,7 +1,7 @@
 @import './global.css';
 
 body {
-    background-color: cornflowerblue;
+    background-color: #282c34;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-stretch: 100%;
@@ -36,7 +36,7 @@ header .header-icons:hover {
     gap: 10px;
     margin: 0 auto 40px auto;
     padding: 10px;
-    background-color: #ffffff;
+    background-color: #3b4252;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: max-content;
@@ -51,7 +51,7 @@ header .header-icons:hover {
 .board-cell {
     width: 60px;
     height: 60px;
-    border: 2px solid #d3d6da;
+    border: 2px solid #5e6b7f;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,8 +60,8 @@ header .header-icons:hover {
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 5px;
-    background-color: #ffffff;
-    color: #1a1a1b;
+    background-color: #5e6b7f;
+    color: white;
     caret-color: transparent;
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -93,19 +93,47 @@ header .header-icons:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #4c566a;
+    color: #eceff4;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    flex-grow: 1;
+    box-shadow: 0px 6px 0px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.1s ease-out, transform 0.1s ease-out, box-shadow 0.1s ease-out;
     width: 60px;
     min-width: 40px;
     height: 40px;
-    font-weight: bold;
-    background-color: #FFFFFF;
-    border-radius: 8px;
-    cursor: pointer; 
-    user-select: none;
-    flex-grow: 1; 
-    max-width: 80px;
 }
 
 .key.large-key {
     flex-grow: 1.5;
-    max-width: 100px;
+    max-width: 80px;
+}
+
+.key:active, .key.pressed {
+    background-color: chocolate;
+    transform: translateY(-7px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+#reset-button {
+    margin-top: 32px;
+    padding: 12px 24px;
+    background-color: #a3be8c;
+    color: white; 
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: none; 
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    /*display: none;*/
+}
+
+#reset-button:hover {
+    background-color: #b4d2a1;
 }
