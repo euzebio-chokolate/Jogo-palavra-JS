@@ -75,7 +75,7 @@ function createGameBoard(wordLength) {
     }
 }
 
-createGameBoard(6);
+createGameBoard(5);
 
 document.addEventListener('DOMContentLoaded', () => {
     const firstCell = document.querySelector('.board-cell[row="0"][col="0"]');

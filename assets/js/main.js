@@ -1,6 +1,6 @@
-async function testeAPI() {
+async function testeAPI(palavra) {
     const input = document.getElementById("teste");
-    if(await checkWordExists(input.value)) {
+    if(await checkWordExists(palavra)) {
         console.log("Palavra Existe");
     } else {
         console.log("Palavra não existe!");

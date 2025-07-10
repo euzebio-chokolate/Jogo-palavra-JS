@@ -131,7 +131,7 @@ header .header-icons:hover {
     border: none; 
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-    /*display: none;*/
+    display: none;
 }
 
 #reset-button:hover {
