@@ -5,6 +5,10 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-stretch: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
 header {
@@ -15,6 +19,7 @@ header {
     font-weight: bold;
     border-bottom: 2px solid #FFFFFF;
     color: #FFFFFF;
+    text-align: center;
 }
 
 header .header-icons {
@@ -28,19 +33,18 @@ header .header-icons:hover {
 
 #game-board {
     display: grid;
-    /* grid-template-columns: repeat(5, 1fr);  O JS agora define isso dinamicamente */
-    gap: 5px;
+    gap: 10px;
     margin: 0 auto 40px auto;
     padding: 10px;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: fit-content; /* Ajusta a largura ao conteúdo */
+    width: max-content;
 }
 
 .board-row {
-    display: grid;
-    /* grid-template-columns: repeat(5, 1fr); O JS na verdade vai controlar isso via o .game-board */
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr);
     gap: 5px;
 }
 
@@ -51,42 +55,33 @@ header .header-icons:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 2em;
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 5px;
     background-color: #ffffff;
     color: #1a1a1b;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    caret-color: transparent;
     cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.tabBox{
-    width: 60px;
-    height: 60px;
-    border: 2px solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 8px;
-    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, transform;
-}
-
-#keyboard{
+#keyboard {
     display: flex;
     flex-direction: column;
     gap: 8px;
     width: 100%;
     max-width: 600px;
+    align-items: center;
+    margin-top: 20px;
 }
 
-.keyboard-keys{
+.keyboard-keys {
     display: flex;
     gap: 4px;
     justify-content: center;
+    width: 100%;
 }
 
 .keyboard-keys:nth-child(2) {
@@ -94,14 +89,23 @@ header .header-icons:hover {
     padding-right: 5%;
 }
 
-.key{
+.key {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 60px;
-    height: 50px;
-    font-size: 1.5rem;
+    min-width: 40px;
+    height: 40px;
     font-weight: bold;
     background-color: #FFFFFF;
     border-radius: 8px;
+    cursor: pointer; 
+    user-select: none;
+    flex-grow: 1; 
+    max-width: 80px;
+}
+
+.key.large-key {
+    flex-grow: 1.5;
+    max-width: 100px;
 }
