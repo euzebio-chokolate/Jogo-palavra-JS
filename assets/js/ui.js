@@ -1,10 +1,10 @@
 const gameBoard = document.getElementById('game-board');
 const keyboard = document.getElementById('keyboard');
 
-let currentRow = 0;
+export let currentRow = 0;
 let currentCol = 0; // A coluna atual na linha (0 a currentWordLength - 1)
 let currentWordLength = 5;
-const maxAttempts = 6;
+export const maxAttempts = 6;
 
 function createGameBoard(wordLength) {
     currentWordLength = wordLength;
@@ -94,8 +94,6 @@ function createGameBoard(wordLength) {
     }
 }
 
-createGameBoard(5);
-
 document.addEventListener('DOMContentLoaded', () => {
     const firstCell = document.querySelector('.board-cell[row="0"][col="0"]');
     if (firstCell) {
@@ -121,10 +119,25 @@ function simulateKeyPressVisual(key) {
     }
 }
 
-function getCurrentWord() {
+export function getCurrentWord() {
     const cells = document.querySelectorAll(`.board-cell[row="${currentRow}"]`);
     let palavra = '';
     cells.forEach(cell => palavra += cell.value);
     return palavra.toLowerCase();
 }
 
+document.addEventListener('keydown', (event) => {
+    simulateKeyPressVisual(event.key);
+});
+
+export function incrementCurrentRow() {
+    currentRow++;
+}
+
+document.getElementById('modal-reset')
+    .addEventListener('click', () => {
+        window.location.reload();
+    })
+
+
+createGameBoard(5);

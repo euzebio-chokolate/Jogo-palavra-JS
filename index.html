@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo Palavra</title>
+    <title>Jogo Termo</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -13,10 +13,12 @@
         <header class="flex">
             <div class="header-utils">
                 <img src="./assets/images/info.svg" class="header-icons" alt="Ícone de Informação">
+                <img src="./assets/images/info.svg" style="visibility: hidden;">
             </div>
-            <div class="header-logo">TERMO??</div>
+            <div class="header-logo">VOCÁBULO</div>
             <div class="header-utils">
-                <img src="./assets/images/stats.svg" class="header-icons" alt="Ícone de Estatísticas">
+                <img id="openStatsModalBtn" src="./assets/images/stats.svg" class="header-icons clickable-icon"
+                    alt="Ícone de Estatísticas">
                 <img src="./assets/images/config.svg" class="header-icons" alt="Ícone de Configurações">
             </div>
         </header>
@@ -24,8 +26,10 @@
         <main>
             <div id="game-board">
             </div>
-
-            <p id="message-area"></p>
+            
+            <div id="errorPopup" class="popup hidden">
+                Palavra inválida!
+            </div>
 
             <div id="keyboard">
                 <div class="keyboard-keys">
@@ -54,7 +58,9 @@
                 </div>
 
                 <div class="keyboard-keys">
-                    <div class="key large-key" data-key="enter"><img src="./assets/images/enter.svg" alt=""></div>
+                    <div class="key large-key" data-key="enter">
+                        <img src="./assets/images/enter.svg" alt="Enter">
+                    </div>
                     <div class="key" data-key="z">Z</div>
                     <div class="key" data-key="x">X</div>
                     <div class="key" data-key="c">C</div>
@@ -62,21 +68,51 @@
                     <div class="key" data-key="b">B</div>
                     <div class="key" data-key="n">N</div>
                     <div class="key" data-key="m">M</div>
-                    <div class="key large-key" data-key="backspace"><img src="./assets/images/backspace.svg" alt=""></div>
+                    <div class="key large-key" data-key="backspace">
+                        <img src="./assets/images/backspace.svg" alt="Apagar">
+                    </div>
                 </div>
             </div>
         </main>
+
         <button id="reset-button">
             Novo Jogo
         </button>
     </div>
 
-</body>
+    <div id="statsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Estatísticas do Jogo</h2>
+            <div id="statsContent">
+                <p><strong>Jogos Jogados:</strong> <span id="statGamesPlayed">0</span></p>
+                <p><strong>Jogos Ganhos:</strong> <span id="statGamesWon">0</span></p>
+                <p><strong>Jogos Perdidos:</strong> <span id="statGamesLose">0</span></p>
+                <p><strong>Sequência Atual de Vitórias:</strong> <span id="statCurrentStreak">0</span></p>
+                <p><strong>Maior Sequência de Vitórias:</strong> <span id="statMaxStreak">0</span></p>
 
-<script src="./assets/js/wordList.js"></script>
-<script src="./assets/js/api.js"></script>
-<script src="./assets/js/ui.js"></script>
-<script src="./assets/js/gameLogic.js"></script>
-<script src="./assets/js/main.js"></script>
+                <h3>Distribuição de Tentativas</h3>
+                <div id="guessDistribution">
+                    <p>1 tentativa: <span id="dist1" class="dist">0</span></p>
+                    <p>2 tentativas: <span id="dist2" class="dist">0</span></p>
+                    <p>3 tentativas: <span id="dist3" class="dist">0</span></p>
+                    <p>4 tentativas: <span id="dist4" class="dist">0</span></p>
+                    <p>5 tentativas: <span id="dist5" class="dist">0</span></p>
+                    <p>6 tentativas: <span id="dist6" class="dist">0</span></p>
+                </div>
+            </div>
+            <div class="btn-reset-div">
+                <button id="modal-reset" class="btn-reset">Novo Jogo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/wordList.js" type="module"></script>
+    <script src="./assets/js/api.js" type="module"></script>
+    <script src="./assets/js/ui.js" type="module"></script>
+    <script src="./assets/js/stats.js" type="module"></script>
+    <script src="./assets/js/gameLogic.js" type="module"></script>
+    <script src="./assets/js/main.js" type="module"></script>
+</body>
 
 </html>
